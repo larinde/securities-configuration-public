@@ -31,15 +31,14 @@ rabbitmq:
 thirdparty-api:
   alpaca-api:
     endPoint: https://paper-api.alpaca.markets
-    apiKeyId: ***ENCRYPT_ME***
-    secretKey: ***ENCRYPT_ME***
-    username: STATIONMANAGEMENT_API_USR
+    apiKeyId: ENCRYPT_ME
+    secretKey: ENCRYPT_ME
   finnhubApi:
     endPoint: https://finnhub.io/api/v1
     apiKey: bosv51vrh5reabqs8nrg
 
 spring:
   datasource:
-    username: root
-    password: 12345
+    username: ENCRYPT_ME
+    password: ENCRYPT_ME
     url: jdbc:mysql://localhost:3306/sec-gateway?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
