@@ -1,0 +1,36 @@
+logging:
+  level:
+    com.koweg.poc: DEBUG
+    org.hibernate: info
+    org.hibernate.SQL: warn
+    org.hibernate.type.descriptor.sql: warn
+
+rabbitmq:
+  exchange:
+    stocks-portfolio-exchange-name: gw.portfolio.portfolio-updated
+  listener:
+    concurrent-consumers: 3
+    retry:
+      initial-interval: 2s
+      max-attempts: 5
+      max-interval: 10s
+      multiplier: 1.0
+  queue:
+    fx-updated-queue-name: gw.fx.currency-updated
+    dead-letter-queue-name: gw.dead-letter
+  recovery:
+    initialDelay: 60
+    messagesPerPoll: 1
+    period: 60
+  retry:
+    initialInterval: 3s
+    maxAttempts: 3
+    maxInterval: 30s
+    multiplier: 3.0
+
+spring:
+  datasource:
+    username: root
+    password: 12345
+    url: jdbc:mysql://localhost:3306/sec-portfolio?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+
